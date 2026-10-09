@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOAK Diary — мой кукольный дневник</title>
+    <meta name="description" content="Мой творческий дневник: OOAK Monster High, эскизы, материалы и идеи.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <a class="logo" href="index.html">OOAK <span>DIARY ♡</span></a>
+        <nav>
+            <a class="active" href="index.html">Дневник</a>
+            <a href="works.html">Мои куклы</a>
+            <a href="ideas.html">Идеи</a>
+            <a href="materials.html">Материалы</a>
+            <a href="about.html">Обо мне</a>
+        </nav>
+    </header>
+
+    <main class="paper">
+        <div class="tape">miweikll ♡</div>
+
+        <section class="intro">
+            <p class="eyebrow">МОЙ ТВОРЧЕСКИЙ УГОЛОК</p>
+            <h1>Маленький мир<br>больших <span>идей ♡</span></h1>
+            <p class="intro-text">
+                Дневник моих ооаков с куклами Monster High:
+                новые образы, переделки, ткани, кружево и немного магии.
+            </p>
+            <a class="sticker-button" href="works.html">Смотреть мои работы ↗</a>
+            <span class="doodle doodle-one">✳</span>
+            <span class="doodle doodle-two">♡</span>
+        </section>
+
+        <section class="diary-section">
+            <div class="section-heading">
+                <span>МОЯ МАСТЕРСКАЯ</span>
+                <span class="handwritten">листай, вдохновляйся!</span>
+            </div>
+
+            <div class="note-grid">
+
+                <a class="note note-pink tilt-left" href="works.html">
+                    <span class="pin">✦</span>
+
+                    <div class="fake-photo doll-photo">
+                        <img
+                            src="images/collagedolls.jpg"
+                            alt="Мои куклы Monster High"
+                            style="width: 100%; height: 100%; object-fit: cover;"
+                        >
+                    </div>
+
+                    <h2>Мои OOAK</h2>
+                    <p>Куклы, новые образы и детали, которыми я горжусь.</p>
+                    <span class="note-link">В галерею →</span>
+                </a>
+
+                <a class="note note-cream tilt-right" href="ideas.html">
+                    <span class="pin">♡</span>
+
+                    <div class="fake-photo sketch-photo">
+                        <img
+                            src="images/_.jpeg"
+                            alt="Эскиз будущего кукольного образа"
+                            style="width: 100%; height: 100%; object-fit: cover;"
+                        >
+                    </div>
+
+                    <h2>Из головы — на бумагу</h2>
+                    <p>Будущие проекты, референсы и мысли, которые хочется сохранить.</p>
+                    <span class="note-link">В мой блокнот →</span>
+                </a>
+
+                <a class="note note-lilac tilt-right" href="materials.html">
+                    <span class="pin">✧</span>
+
+                    <div class="fake-photo material-photo">
+                        <img
+                            src="images/творчество.jpeg"
+                            alt="Материалы и инструменты для творчества"
+                            style="width: 100%; height: 100%; object-fit: cover;"
+                        >
+                    </div>
+
+                    <h2>Всё для творчества</h2>
+                    <p>Чем я пользуюсь и что помогает создавать кукольные образы.</p>
+                    <span class="note-link">На полочку →</span>
+                </a>
+
+            </div>
+        </section>
+
+        <section class="latest">
+            <div>
+                <p class="eyebrow">ЗАМЕТКА НА ПОЛЯХ</p>
+                <h2>Каждая кукла — маленькая история.</h2>
+                <p>Здесь будут появляться мои эскизы и наброски работ, находки и идеи на будущее.</p>
+
+                <!-- Три эскиза в один ряд -->
+                <div class="sketch-row">
+                    <img
+                        src="images/эскиз1.png"
+                        alt="Первый эскиз кукольного образа"
+                        loading="lazy"
+                    >
+                    <img
+                        src="images/эскиз2.png"
+                        alt="Второй эскиз кукольного образа"
+                        loading="lazy"
+                    >
+                    <img
+                        src="images/эскиз3.png"
+                        alt="Третий эскиз кукольного образа"
+                        loading="lazy"
+                    >
+                </div>
+            </div>
+
+            <div class="big-heart">♡</div>
+        </section>
+
+        <footer>
+            <span>OOAK DIARY · моё портфолио работ и много чего полезного ♡</span>
+            <a href="about.html">Познакомиться со мной ↗</a>
+        </footer>
+    </main>
+
+    
+<div class="sketch-lightbox" id="sketchLightbox">
+    <button class="sketch-lightbox-close" id="sketchLightboxClose" aria-label="Закрыть">×</button>
+    <img id="sketchLightboxImage" src="" alt="Увеличенный эскиз">
+</div>
+
+<script>
+    const sketchImages = document.querySelectorAll('.sketch-row img');
+    const sketchLightbox = document.getElementById('sketchLightbox');
+    const sketchLightboxImage = document.getElementById('sketchLightboxImage');
+    const sketchLightboxClose = document.getElementById('sketchLightboxClose');
+
+    sketchImages.forEach(function(image) {
+        image.addEventListener('click', function() {
+            sketchLightboxImage.src = image.src;
+            sketchLightboxImage.alt = image.alt;
+            sketchLightbox.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    function closeSketchLightbox() {
+        sketchLightbox.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+
+    sketchLightboxClose.addEventListener('click', closeSketchLightbox);
+
+    sketchLightbox.addEventListener('click', function(event) {
+        if (event.target === sketchLightbox || event.target === sketchLightboxImage) {
+            closeSketchLightbox();
+        }
+    });
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeSketchLightbox();
+        }
+    });
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
