@@ -1147,3 +1147,42 @@ footer a {
     cursor: pointer;
 }
 
+/* Увеличиваем эскиз в карточке будущего проекта */
+.note-cream .idea-photos {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.note-cream .idea-photos img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
+/* Делаем страницу шире */
+.paper {
+  width: 94%;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* На небольших экранах оставляем отступы */
+@media (max-width: 700px) {
+  .paper {
+    width: 96%;
+  }
+}
+
+/* Убираем тёмную полосу сверху страницы */
+html,
+body {
+  margin-top: 0;
+  padding-top: 0;
+  background-color: #f8eaf1;
+}
+
